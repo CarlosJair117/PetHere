@@ -18,7 +18,6 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
 
-
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -133,7 +132,7 @@ class _AccountState extends State<Account> {
                                 ),
                               ],
                             ),
-                            onPressed: () => Navigator.of(context).pushNamed("/")),
+                            onPressed: () => Navigator.pop(context)),
                       ],
                     ),
                   ),
