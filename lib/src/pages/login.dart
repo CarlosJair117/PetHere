@@ -125,17 +125,12 @@ class _LoginState extends State<Login> {
 
   Widget _registro(){
     return OutlineButton(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10), ),
       borderSide: BorderSide(color: Colors.orange),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            "Registrate",
-            style: TextStyle(color: Colors.orange),
-          ),
+          Text("Registrate", style: TextStyle(color: Colors.orange)),
         ],
       ),
       onPressed: () => Navigator.of(context).pushNamed("account"));

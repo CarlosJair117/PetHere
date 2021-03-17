@@ -7,12 +7,19 @@ class Account extends StatefulWidget {
 
 class _AccountState extends State<Account> {
   String nameValue;
+  String apetPaterno;
+  String apetMaterno;
   String passwordValue;
   String email;
-  bool tecladoVisible = false;
+  String telefono;
+  String calle;
+  String numExterior;
+  String numInterior;
+  String localidad;
+  String estado;
   
 
-  final formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   
 
   @override
@@ -53,10 +60,7 @@ class _AccountState extends State<Account> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "PET HERE",
-              style: TextStyle(fontSize: 30, color: Colors.white),
-            ),
+            Text("PET HERE",style: TextStyle(fontSize: 30, color: Colors.white), ),
             Text("Mantén seguras a tus mascotas")
           ],
         ),
@@ -66,43 +70,125 @@ class _AccountState extends State<Account> {
 
   Widget _form(){
     return Form(
-      key: formKey,
+      key: _formKey,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Text("Crear Cuenta", style: TextStyle(fontSize: 18)),
             TextFormField(
-              decoration: InputDecoration(labelText: "Usuario:"),
+              decoration: InputDecoration(labelText: "Nombre:"),
               onSaved: (value) => nameValue = value,
-              validator: (value) {
+             validator: (value) {
+              if (value.isEmpty) {
+                  return "Llene este campo";
+                } else { return null; }
+            },
+            ),
+            TextFormField(
+              decoration: InputDecoration(labelText: "Apellido Paterno:"),
+              onSaved: (value) => apetPaterno = value,
+              validator: (value){
                 if (value.isEmpty) {
                   return "Llene este campo";
-                } else {
-                  return null;
-                }
+                } else { return null; }
+              },
+            ),
+            TextFormField(
+              decoration: InputDecoration(labelText: "Apellido Materno:"),
+              onSaved: (value) => apetMaterno = value,
+              validator: (value){
+                 if (value.isEmpty) {
+                  return "Llene este campo";
+                } else { return null; }
               },
             ),
             TextFormField(
               decoration: InputDecoration(labelText: "Correo electrónico:"),
               onSaved: (value) => email = value,
-              validator: (value) {
-                if (value.isEmpty) {
+              validator: (value){
+                 if (value.isEmpty) {
                   return "Llene este campo";
-                } else {
-                  return null;
-                }
+                } else { return null; }
               },
             ),
             TextFormField(
               decoration: InputDecoration(labelText: "Contraseña:"),
               onSaved: (value) => passwordValue = value,
-              validator: (value) {
-                if (value.isEmpty) {
+              validator: (value){
+                 if (value.isEmpty) {
                   return "Llene este campo";
-                } else {
-                  return null;
-                }
+                } else { return null; }
               },
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top:45),
+              child: Text("Información de contacto:", style: TextStyle(fontWeight: FontWeight.bold ),),
+            ),
+            Text('Ésta información es importante ne caso de que tu mascota se extravíe'),
+            TextFormField(
+              decoration: InputDecoration(labelText: "Número de teléfono"),
+              onSaved: (value) => telefono = value,
+              validator: (value){
+                 if (value.isEmpty) {
+                  return "Llene este campo";
+                } else { return null; }
+              },
+            ),
+            TextFormField(
+              decoration: InputDecoration(labelText: "Calle:"),
+              onSaved: (value) => calle = value,
+              validator: (value){
+                 if (value.isEmpty) {
+                  return "Llene este campo";
+                } else { return null; }
+              },
+            ),
+           
+                TextFormField(
+                  decoration: InputDecoration(labelText: "Número exterior:"),
+                  onSaved: (value) => numExterior = value,
+                  validator: (value){
+                    if (value.isEmpty) {
+                      return "Llene este campo";
+                    } else { return null; }
+                  },
+                ),
+                TextFormField(
+                  decoration: InputDecoration(labelText: "Número interior:"),
+                  onSaved: (value) => numInterior = value,
+                  validator: (value){
+                    if (value.isEmpty) {
+                      return "Llene este campo";
+                    } else { return null; }
+                  },
+                ),
+              
+            TextFormField(
+              decoration: InputDecoration(labelText: "Localidad:"),
+              onSaved: (value) => localidad = value,
+              validator: (value){
+                 if (value.isEmpty) {
+                  return "Llene este campo";
+                } else { return null; }
+              },
+            ),
+            /*TextFormField(
+              decoration: InputDecoration(labelText: "Localidad:"),
+              onSaved: (value) => localidad = value,
+              validator: (value){
+                 if (value.isEmpty) {
+                  return "Llene este campo";
+                } else { return null; }
+              },
+            ),*/
+            TextFormField(
+              decoration: InputDecoration(labelText: "Estado:"),
+              onSaved: (value) => estado = value,
+              validator: (value){
+                 if (value.isEmpty) {
+                  return "Llene este campo";
+                } else { return null; }
+              },          
             ),
             SizedBox( height: 30,),
             _crearCuenta(),
@@ -113,24 +199,24 @@ class _AccountState extends State<Account> {
   }
 
   Widget _crearCuenta(){
-    return RaisedButton(
-      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
+    return ElevatedButton(
+    /*  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
       color: Colors.orange,
-      textColor: Colors.white,
+      textColor: Colors.white, */
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [Text("Crear Cuenta"), ],
       ),
-      onPressed: () {},
+     onPressed: (){}
     );
   }
 
   Widget _regresar() {
-    return OutlineButton(
-      shape: RoundedRectangleBorder(
+    return OutlinedButton(
+    /*  shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      borderSide: BorderSide(color: Colors.orange),
+      borderSide: BorderSide(color: Colors.orange), */
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [Text("Ya tengo una cuenta",style: TextStyle(color: Colors.orange), ),],
@@ -138,6 +224,14 @@ class _AccountState extends State<Account> {
       onPressed: () => Navigator.pop(context)
     );
   }
+
+    /* _validar(String value){
+     if (value == '') {
+      return "Llene este campo";
+    } else {
+      return null;
+    }
+  }*/
 
 }
 
