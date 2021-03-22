@@ -199,10 +199,10 @@ class _AccountState extends State<Account> {
   }
 
   Widget _crearCuenta(){
-    return ElevatedButton(
-    /*  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
+    return RaisedButton(
+      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10)),
       color: Colors.orange,
-      textColor: Colors.white, */
+      textColor: Colors.white, 
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [Text("Crear Cuenta"), ],
@@ -212,11 +212,11 @@ class _AccountState extends State<Account> {
   }
 
   Widget _regresar() {
-    return OutlinedButton(
-    /*  shape: RoundedRectangleBorder(
+    return OutlineButton(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
-      borderSide: BorderSide(color: Colors.orange), */
+      borderSide: BorderSide(color: Colors.orange), 
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [Text("Ya tengo una cuenta",style: TextStyle(color: Colors.orange), ),],
