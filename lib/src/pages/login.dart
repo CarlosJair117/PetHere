@@ -24,10 +24,7 @@ class _LoginState extends State<Login> {
               mainAxisSize: MainAxisSize.min,
               children:[
                _presentacion(),
-                Image.asset(
-                  "assets/images/perro.png",
-                  width: 150,
-                )
+                Image.asset( "assets/images/perro.png",width: 150,)
               ],
             ),
           ),
@@ -56,10 +53,7 @@ class _LoginState extends State<Login> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "PET HERE",
-              style: TextStyle(fontSize: 30, color: Colors.white),
-            ),
+            Text("PET HERE",style: TextStyle(fontSize: 30, color: Colors.white), ),
             Text("Mantén seguras a tus mascotas")
           ],
         ),
@@ -119,7 +113,7 @@ class _LoginState extends State<Login> {
           Text("Iniciar Sesión"),
         ],
       ),
-      onPressed: () {},
+      onPressed: () => Navigator.of(context).pushNamed("home"),
     );
   }
 
@@ -133,6 +127,7 @@ class _LoginState extends State<Login> {
           Text("Registrate", style: TextStyle(color: Colors.orange)),
         ],
       ),
-      onPressed: () => Navigator.of(context).pushNamed("account"));
+      onPressed: () => Navigator.of(context).pushNamed("account")
+    );
   }
 }
