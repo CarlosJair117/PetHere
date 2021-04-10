@@ -113,7 +113,7 @@ class _LoginState extends State<Login> {
           Text("Iniciar Sesión"),
         ],
       ),
-      onPressed: () => Navigator.of(context).pushNamed("home"),
+      onPressed: () => Navigator.of(context).pushNamed("navBar"),
     );
   }
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
 
   final _estilo = new TextStyle(fontWeight:FontWeight.bold, fontSize: 16);
-  final _estiloVerde = new TextStyle(fontWeight:FontWeight.bold, fontSize: 16, color: Colors.green[200]);
+  final _estiloVerde = new TextStyle(fontWeight:FontWeight.bold, fontSize: 16, color: Color(0XFF20CDA3));
   final _estiloRojo = new TextStyle(fontWeight:FontWeight.bold, fontSize: 16, color: Colors.red);
 
   @override

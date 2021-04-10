@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pet_here/src/pages/create_account.dart';
 import 'package:pet_here/src/pages/home.dart';
 import 'package:pet_here/src/pages/login.dart';
+import 'package:pet_here/src/widgets/navigation_bar.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         "/":(BuildContext context) => Login(),
         "account":(BuildContext context) => Account(),
         "home": (BuildContext context) => HomePage(),
+        "navBar": (BuildContext context) => NavigatorBarWidget(),
       },
     );
   }
